@@ -88,22 +88,6 @@ export default function CourseDetailModal({ course, onClose }) {
           </button>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes modalIn {
-          from {
-            opacity: 0;
-            transform: scale(0.95);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-        .animate-modalIn {
-          animation: modalIn 0.2s ease-out;
-        }
-      `}</style>
     </div>
   );
 }

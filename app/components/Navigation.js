@@ -22,12 +22,12 @@ export default function Navigation() {
           <div className="flex items-center gap-3">
             <div className="relative group">
               <div className="absolute inset-0 bg-blue-900 rounded-xl blur-md opacity-60 group-hover:opacity-100 transition-opacity animate-pulse"></div>
-              <div className="relative w-11 h-11 bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="relative w-11 h-11 bg-linear-to-br from-blue-900 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">KLC</span>
               </div>
             </div>
             <div className="leading-tight">
-              <h1 className="text-xl font-bold bg-gradient-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">KLC Academy</h1>
+              <h1 className="text-xl font-bold bg-linear-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">KLC Academy</h1>
               <p className="text-xs text-gray-500">Gujranwala • Since 2024</p>
             </div>
           </div>

@@ -18,7 +18,7 @@ export default function CollaborationSection() {
           <div className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
             <div className="relative mb-6">
               <div className="absolute inset-0 bg-blue-900 rounded-xl blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="relative w-16 h-16 bg-linear-to-br from-blue-900 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-2xl">KLC</span>
               </div>
             </div>
@@ -39,8 +39,8 @@ export default function CollaborationSection() {
 
           <div className="group bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
             <div className="relative mb-6">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-900 rounded-xl blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
-              <div className="relative w-16 h-16 bg-gradient-to-br from-blue-800 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
+              <div className="absolute inset-0 bg-linear-to-br from-blue-700 to-blue-900 rounded-xl blur-md opacity-30 group-hover:opacity-50 transition-opacity"></div>
+              <div className="relative w-16 h-16 bg-linear-to-br from-blue-800 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-xl">ARHAFi</span>
               </div>
             </div>
@@ -66,9 +66,9 @@ export default function CollaborationSection() {
             alt="KLC Academy and ARHAFi Collaboration" 
             width={1200} 
             height={500}
-            className="w-full h-[350px] object-cover group-hover:scale-105 transition-transform duration-700"
+            className="w-full h-87.5 object-cover group-hover:scale-105 transition-transform duration-700"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-950/95 via-blue-900/90 to-transparent flex items-center">
+          <div className="absolute inset-0 bg-linear-to-r from-blue-950/95 via-blue-900/90 to-transparent flex items-center">
             <div className="px-8 md:px-12 text-white max-w-2xl">
               <div className="inline-block px-3 py-1 bg-white/20 rounded-full text-sm mb-4 backdrop-blur-sm">
                 🤝 Signed: January 2025

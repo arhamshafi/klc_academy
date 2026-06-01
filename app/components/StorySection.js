@@ -14,9 +14,9 @@ export default function StorySection() {
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
           <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute -inset-0.5 bg-linear-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
+              <div className="w-16 h-16 bg-linear-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
                 <span className="text-3xl">🚀</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">The Dream</h3>
@@ -31,9 +31,9 @@ export default function StorySection() {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute -inset-0.5 bg-linear-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
+              <div className="w-16 h-16 bg-linear-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
                 <span className="text-3xl">🏠</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">The Beginning</h3>
@@ -48,9 +48,9 @@ export default function StorySection() {
           </div>
 
           <div className="relative group">
-            <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute -inset-0.5 bg-linear-to-r from-blue-600 to-blue-800 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-500"></div>
             <div className="relative bg-white rounded-2xl p-8 shadow-lg">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
+              <div className="w-16 h-16 bg-linear-to-br from-blue-900 to-blue-700 rounded-2xl flex items-center justify-center mb-5 shadow-lg">
                 <span className="text-3xl">🌟</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">The Growth</h3>
@@ -66,7 +66,7 @@ export default function StorySection() {
         </div>
 
         {/* Stats Bar */}
-        <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-8 text-white">
+        <div className="bg-linear-to-r from-blue-900 to-blue-800 rounded-2xl p-8 text-white">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
               <div className="text-3xl md:text-4xl font-bold">500+</div>

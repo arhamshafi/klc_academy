@@ -111,11 +111,11 @@ export default function CoursesSection() {
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             From {""}
-            <span className="bg-gradient-to-r from-gray-600 to-gray-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-gray-600 to-gray-400 bg-clip-text text-transparent">
               Basics
             </span>
             {" "}to{" "}
-            <span className="bg-gradient-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-blue-900 to-blue-600 bg-clip-text text-transparent">
               Industry Excellence
             </span>
           </h2>
@@ -170,7 +170,7 @@ export default function CoursesSection() {
                 </div>
               </div>
             ))}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-center">
+            <div className="bg-linear-to-r from-blue-50 to-indigo-50 rounded-2xl p-6 border-2 border-dashed border-blue-300 flex flex-col items-center justify-center text-center">
               <span className="text-4xl mb-3">➕</span>
               <h3 className="text-lg font-bold text-blue-900">Limited Offerings</h3>
               <p className="text-sm text-gray-600 mt-2">Only 3 basic courses were available before the ARHAFi partnership</p>
@@ -187,7 +187,7 @@ export default function CoursesSection() {
                 className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 cursor-pointer relative overflow-hidden"
                 onClick={() => setSelectedCourse(course)}
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-blue-900/5 to-transparent rounded-full -mr-10 -mt-10"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-linear-to-br from-blue-900/5 to-transparent rounded-full -mr-10 -mt-10"></div>
                 <div className={`w-14 h-14 ${course.color} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-all duration-300`}>
                   <span className="text-2xl">{course.icon}</span>
                 </div>
@@ -218,7 +218,7 @@ export default function CoursesSection() {
         )}
 
         {/* Collaboration Impact Banner */}
-        <div className="mt-12 bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-6 text-white">
+        <div className="mt-12 bg-linear-to-r from-blue-900 to-blue-800 rounded-2xl p-6 text-white">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-4">
               <span className="text-4xl">📈</span>

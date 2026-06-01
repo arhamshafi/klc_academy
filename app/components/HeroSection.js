@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function HeroSection() {
   return (
     <section id="story" className="relative pt-28 pb-16 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800">
+      <div className="absolute inset-0 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
         <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       </div>
@@ -20,7 +20,7 @@ export default function HeroSection() {
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
               KLC Academy
-              <span className="block bg-gradient-to-r from-blue-300 via-white to-blue-200 bg-clip-text text-transparent">
+              <span className="block bg-linear-to-r from-blue-300 via-white to-blue-200 bg-clip-text text-transparent">
                 Where Dreams Take Flight
               </span>
             </h1>
@@ -48,31 +48,18 @@ export default function HeroSection() {
                 height={400}
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-950 via-transparent to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+              <div className="absolute inset-0 bg-linear-to-t from-blue-950 via-transparent to-transparent"></div>
+              <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/80 to-transparent">
                 <p className="text-white font-bold text-lg">The Beginning</p>
                 <p className="text-blue-200 text-sm">Day 1 at KLC Academy • 5 Brave Students</p>
               </div>
             </div>
-            <div className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-yellow-500 text-white px-4 py-2 rounded-full shadow-lg animate-bounce-slow text-sm font-bold">
+            <div className="absolute -top-4 -right-4 bg-linear-to-r from-orange-500 to-yellow-500 text-white px-4 py-2 rounded-full shadow-lg animate-bounce-slow text-sm font-bold">
               ⭐ 500+ Students Now!
             </div>
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes bounce-slow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-10px); }
-        }
-        .animate-bounce-slow {
-          animation: bounce-slow 2s ease-in-out infinite;
-        }
-        .delay-1000 {
-          animation-delay: 1s;
-        }
-      `}</style>
     </section>
   );
 }
