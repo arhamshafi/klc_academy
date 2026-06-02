@@ -2,61 +2,135 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section id="story" className="relative pt-28 pb-16 px-4 overflow-hidden">
-      <div className="absolute inset-0 bg-linear-to-br from-blue-950 via-blue-900 to-blue-800">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-white/5 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <section className="relative min-h-screen bg-white overflow-hidden">
+      
+      {/* Clean Background Accents */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-linear-to-bl from-slate-50 to-transparent" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-slate-100 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6 text-white">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20 animate-bounce-slow">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pt-28 pb-20">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          
+          {/* Left Side */}
+          <div>
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 bg-slate-100 rounded-full px-5 py-2 mb-8">
+              <span className="h-2 w-2 rounded-full bg-blue-900"></span>
+              <span className="text-blue-900 text-sm font-semibold">
+                Admissions Open 2026
               </span>
-              <span className="text-sm font-semibold">✨ From Dream to Reality | Est. 2024</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight">
-              KLC Academy
-              <span className="block bg-linear-to-r from-blue-300 via-white to-blue-200 bg-clip-text text-transparent">
-                Where Dreams Take Flight
+
+            {/* Heading */}
+            <h1 className="text-gray-900 text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.15]">
+              Learn Skills.
+              <br />
+              Build Careers.
+              <br />
+              <span className="text-blue-900">
+                Change Your Future.
               </span>
             </h1>
-            <p className="text-lg md:text-xl text-blue-100 leading-relaxed">
-              From a small room with 5 students to Gujranwala's premier tech institute — 
-              this is our story of passion, perseverance, and purpose.
+
+            {/* Description */}
+            <p className="mt-6 text-lg text-gray-600 max-w-lg leading-relaxed">
+              KLC Academy helps students achieve success through
+              IELTS, PTE, OET, LAT preparation and professional
+              IT courses including Graphics Designing, Social Media
+              Marketing and MS Office.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <a href="#story" className="group relative px-8 py-3 bg-white text-blue-900 rounded-full font-bold overflow-hidden shadow-xl">
-                <span className="relative z-10">Read Our Story →</span>
-                <div className="absolute inset-0 bg-blue-50 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
+
+            {/* Buttons */}
+            <div className="flex flex-wrap gap-4 mt-8">
+              <a
+                href="#courses"
+                className="px-8 py-3.5 bg-blue-900 text-white font-semibold rounded-lg hover:bg-blue-950 transition shadow-md"
+              >
+                Explore Courses
               </a>
-              <a href="#courses" className="px-8 py-3 bg-blue-800/50 backdrop-blur-sm text-white rounded-full font-bold hover:bg-blue-800 transition-all border-2 border-white/30">
-                Explore Courses 📚
+
+              <a
+                href="#contact"
+                className="px-8 py-3.5 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg hover:border-blue-900 hover:text-blue-900 transition"
+              >
+                Contact Us
               </a>
+            </div>
+
+            {/* Course Tags */}
+            <div className="flex flex-wrap gap-2 mt-10">
+              {[
+                "IELTS",
+                "PTE",
+                "OET",
+                "LAT",
+                "Graphics Design",
+                "SMM",
+                "MS Office",
+              ].map((course) => (
+                <span
+                  key={course}
+                  className="px-4 py-1.5 bg-gray-50 text-gray-700 text-sm rounded-md border border-gray-200"
+                >
+                  {course}
+                </span>
+              ))}
             </div>
           </div>
 
+          {/* Right Side */}
           <div className="relative">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20 transform hover:scale-105 transition-transform duration-500">
-              <Image 
-                src="/frontdummy.png" 
-                alt="KLC Academy Opening" 
-                width={600} 
-                height={400}
+            {/* Main Image */}
+            <div className="relative rounded-xl overflow-hidden shadow-xl border border-gray-200">
+              <Image
+                src="/frontdummy.png"
+                alt="KLC Academy"
+                width={600}
+                height={600}
+                priority
                 className="w-full h-auto object-cover"
               />
-              <div className="absolute inset-0 bg-linear-to-t from-blue-950 via-transparent to-transparent"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black/80 to-transparent">
-                <p className="text-white font-bold text-lg">The Beginning</p>
-                <p className="text-blue-200 text-sm">Day 1 at KLC Academy • 5 Brave Students</p>
-              </div>
+              <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-blue-900/60 to-transparent h-32" />
             </div>
-            <div className="absolute -top-4 -right-4 bg-linear-to-r from-orange-500 to-yellow-500 text-white px-4 py-2 rounded-full shadow-lg animate-bounce-slow text-sm font-bold">
-              ⭐ 500+ Students Now!
+
+            {/* Info Cards */}
+            <div className="absolute -left-4 top-10 bg-white rounded-lg shadow-lg p-4 border-l-4 border-blue-900">
+              <h3 className="text-blue-900 font-bold text-sm">
+                IELTS / PTE
+              </h3>
+              <p className="text-gray-600 text-xs">
+                Test Preparation
+              </p>
             </div>
+
+            <div className="absolute -right-4 bottom-10 bg-white rounded-lg shadow-lg p-4 border-l-4 border-blue-900">
+              <h3 className="text-blue-900 font-bold text-sm">
+                IT Courses
+              </h3>
+              <p className="text-gray-600 text-xs">
+                Design • Marketing
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Stats */}
+        <div className="grid md:grid-cols-3 gap-8 mt-24 pt-8 border-t border-gray-200">
+          <div className="text-center">
+            <h2 className="text-blue-900 text-4xl font-bold">500+</h2>
+            <p className="text-gray-600 mt-1">Students Trained</p>
+          </div>
+
+          <div className="text-center">
+            <h2 className="text-blue-900 text-4xl font-bold">10+</h2>
+            <p className="text-gray-600 mt-1">Professional Courses</p>
+          </div>
+
+          <div className="text-center">
+            <h2 className="text-blue-900 text-4xl font-bold">2024</h2>
+            <p className="text-gray-600 mt-1">Established</p>
           </div>
         </div>
       </div>
