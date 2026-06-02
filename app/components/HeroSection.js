@@ -4,7 +4,7 @@ import { GraduationCap, Globe, Briefcase, Users, ChevronRight, Star } from "luci
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen bg-white">
-      
+
       {/* Modern Background Pattern */}
       <div className="absolute inset-0 bg-linear-to-br from-blue-50/50 via-white to-white" />
       <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30" />
@@ -12,7 +12,7 @@ export default function HeroSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24 lg:pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-          
+
           {/* Left Side - Content */}
           <div className="text-center lg:text-left">
             {/* Trust Badge */}
@@ -41,7 +41,7 @@ export default function HeroSection() {
             </h1>
 
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-              Join KLC Academy and transform your potential into expertise. 
+              Join KLC Academy and transform your potential into expertise.
               World-class training in language proficiency and digital skills.
             </p>
 
@@ -85,12 +85,10 @@ export default function HeroSection() {
             {/* Main Image Card */}
             <div className="relative rounded-2xl p-3 ">
               <div className="relative rounded-xl overflow-hidden">
-                <Image
-                  src="/klc.png"
-                  alt="KLC Academy Campus"
-                  width={550}
-                  height={550}
-                  priority
+                <Image src="/witbg.png" alt="KLC Academy Building in Gujranwala" width={550} height={550} priority
+                  // preload kr k rakhta ha 
+                  // placeholder="blur"
+                  // blurDataURL="..."
                   className="w-full h-auto object-cover rounded-xl"
                 />
                 {/* Overlay Gradient */}
