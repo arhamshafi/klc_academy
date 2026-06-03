@@ -1,11 +1,14 @@
 "use client";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [activeItem, setActiveItem] = useState("About KLC");
+  const menuRef = useRef(null)
+
 
   useEffect(() => {
     setMounted(true);
@@ -28,6 +31,19 @@ export default function Navigation() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   // Don't render until mounted
   if (!mounted) {
     return null;
@@ -39,7 +55,7 @@ export default function Navigation() {
         ? "bg-black shadow-2xl"
         : "bg-transparent backdrop-blur-sm"
         }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+        <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-5 py-3">
           <div className="flex items-center justify-between gap-4">
 
             {/* Logo Section - Responsive */}
@@ -47,7 +63,7 @@ export default function Navigation() {
               <figure className="flex items-center gap-2 sm:gap-3 shrink-0">
                 <Image width={100} height={100} src={"/logo.webp"} alt="KLC Academy Building in Gujranwala" className="w-15" priority />
               </figure>
-              <div className="">
+              <div className="hide">
                 <h1 className={` ${isScrolled ? "text-blue-400" : "text-blue-600"} font-bold text-md `}>KeyStone Learning Center</h1>
                 <p className={`font-mono ${isScrolled ? "text-white" : "text-black"} text-xs `}> Excellent Through Education </p>
               </div>
@@ -55,23 +71,33 @@ export default function Navigation() {
 
             {/* Desktop Menu - Hidden on mobile, visible on md and up */}
             <div className="hidden md:flex items-center gap-4 lg:gap-6">
-              {["Our Story", "Collaboration", "Courses", "Contact"].map((item) => (
+              {["About KLC", "Collaboration", "Courses"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(" ", "")}`}
-                  className={`font-medium transition-all hover:scale-105 relative group text-sm lg:text-base ${isScrolled ? "text-gray-300 hover:text-white" : "text-gray-600 hover:text-blue-900"
+                  onClick={() => setActiveItem(item)}
+                  className={`font-medium transition-all hover:scale-105 relative group text-sm lg:text-base ${activeItem === item
+                    ? "text-blue-500"
+                    : isScrolled
+                      ? "text-gray-300 hover:text-white"
+                      : "text-gray-600 hover:text-blue-900"
                     }`}
                 >
                   {item}
-                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${isScrolled ? "bg-white" : "bg-blue-900"
-                    }`}></span>
+                  <span
+                    className={`absolute -bottom-1 left-0 h-0.5 transition-all duration-300 ${activeItem === item
+                      ? "w-full bg-blue-500"
+                      : `w-0 group-hover:w-full ${isScrolled ? "bg-white" : "bg-blue-900"
+                      }`
+                      }`}
+                  ></span>
                 </a>
               ))}
-              <button className={`relative px-4 py-2 lg:px-5 lg:py-2 rounded-full font-medium overflow-hidden group shadow-lg hover:shadow-xl transition-all text-sm lg:text-base ${isScrolled
+              <button className={`relative px-4 cursor-pointer py-1.5 rounded-full font-medium overflow-hidden group shadow-lg hover:shadow-xl transition-all text-sm lg:text-sm ${isScrolled
                 ? "bg-white text-black"
                 : "bg-blue-900 text-white"
                 }`}>
-                <span className="relative z-10 whitespace-nowrap">Enroll Now →</span>
+                <span className="relative z-10 whitespace-nowrap">Contact Now →</span>
                 <div className={`absolute inset-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ${isScrolled ? "bg-gray-200" : "bg-blue-800"
                   }`}></div>
               </button>
@@ -95,27 +121,32 @@ export default function Navigation() {
           </div>
 
           {/* Mobile Menu - Slide down animation */}
-          <div className={`md:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
+          <div ref={menuRef} className={`md:hidden transition-all duration-300 overflow-hidden ${isMobileMenuOpen ? "max-h-96 opacity-100 mt-4" : "max-h-0 opacity-0"
             }`}>
             <div className="space-y-3 pb-4">
-              {["Our Story", "Collaboration", "Courses", "Contact"].map((item) => (
+              {["About KLC", "Collaboration", "Courses", "Contact"].map((item) => (
                 <a
                   key={item}
                   href={`#${item.toLowerCase().replace(" ", "")}`}
-                  className={`block font-medium py-2 px-2 rounded-lg transition ${isScrolled
-                    ? "text-gray-300 hover:text-white hover:bg-white/10"
-                    : "text-gray-700 hover:text-blue-900 hover:bg-blue-50"
+                  onClick={() => {
+                    setActiveItem(item);
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className={`block font-medium py-1.5 px-2 rounded-lg transition text-sm ${activeItem === item
+                    ? "bg-blue-500/10 text-gray-600"
+                    : isScrolled
+                      ? "text-gray-300 hover:text-white hover:bg-white/10"
+                      : "text-gray-700 hover:text-blue-900 hover:bg-blue-50"
                     }`}
-                  onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item}
                 </a>
               ))}
-              <button className={`w-full py-2.5 rounded-full font-medium transition ${isScrolled
+              <button className={`w-full py-1.5 rounded-full font-medium text-sm transition ${isScrolled
                 ? "bg-white text-black hover:bg-gray-200"
                 : "bg-blue-900 text-white hover:bg-blue-800"
                 }`}>
-                Enroll Now
+                Contact Now
               </button>
             </div>
           </div>
