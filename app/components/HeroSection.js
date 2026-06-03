@@ -11,34 +11,54 @@ export default function HeroSection() {
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24 lg:pt-32 pb-20">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-15 items-center">
 
           {/* Left Side - Content */}
-          <div className="text-center lg:text-left">
+          <div>
             {/* Trust Badge */}
-            <div className="inline-flex items-center gap-3 bg-white shadow-lg rounded-full px-5 py-2 mb-8 border border-gray-100">
-              <div className="flex -space-x-2">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="w-8 h-8 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center">
-                    <span className="text-blue-800 text-xs font-bold">S</span>
-                  </div>
-                ))}
+            <div className="flex justify-center xl:justify-start">
+              <div className="inline-flex items-center gap-3 bg-white shadow-lg rounded-full px-5 py-2 mb-8 border border-gray-100">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map((i) => (
+                    <div
+                      key={i}
+                      className="w-8 h-8 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center"
+                    >
+                      <span className="text-blue-800 text-xs font-bold">S</span>
+                    </div>
+                  ))}
+                </div>
+                <span className="text-gray-700 text-sm font-medium">
+                  Trusted by 500+ Students
+                </span>
               </div>
-              <span className="text-gray-700 text-sm font-medium">Trusted by 500+ Students</span>
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
-              <span className="text-gray-900">Learn </span>
-              <span className="text-blue-900">Skills.</span>
-              <br />
-              <span className="text-gray-900">Build </span>
-              <span className="text-blue-900">Careers.</span>
-              <br />
-              <span className="bg-linear-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
-                Change Future.
-              </span>
-            </h1>
+            <div className="w-full flex justify-evenly items-center">
+
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
+                <span className="text-gray-900">Learn </span>
+                <span className="text-blue-900">Skills.</span>
+                <br />
+                <span className="text-gray-900">Build </span>
+                <span className="text-blue-900">Careers.</span>
+                <br />
+                <span className="bg-linear-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
+                  Change Future.
+                </span>
+              </h1>
+
+              <figure className=" block lg:hidden">
+                <Image src="/logo.webp" alt="KLC Academy Building in Gujranwala" width={550} height={550} priority
+                  // preload kr k rakhta ha 
+                  // placeholder="blur"
+                  // blurDataURL="..."
+                  className="w-50 h-auto object-cover rounded-xl"
+                />
+                {/* Overlay Gradient */}
+              </figure>
+            </div>
 
             <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Join KLC Academy and transform your potential into expertise.
@@ -81,19 +101,19 @@ export default function HeroSection() {
           </div>
 
           {/* Right Side - Modern Image Layout */}
-          <div className="relative">
+          <div className="relative lg:block hidden">
             {/* Main Image Card */}
             <div className="relative rounded-2xl p-3 ">
-              <div className="relative rounded-xl overflow-hidden">
+              <figure className="relative rounded-xl overflow-hidden">
                 <Image src="/witbg.png" alt="KLC Academy Building in Gujranwala" width={550} height={550} priority
                   // preload kr k rakhta ha 
                   // placeholder="blur"
                   // blurDataURL="..."
-                  className="w-full h-auto object-cover rounded-xl"
+                  className="w-[90%] mx-auto h-auto object-cover rounded-xl"
                 />
                 {/* Overlay Gradient */}
                 <div className="absolute inset-0 bg-linear-to-t from-blue-500/10 via-transparent to-transparent" />
-              </div>
+              </figure>
             </div>
 
             {/* Floating Stats Cards */}
@@ -127,6 +147,13 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
+          <div className="bg-white flex justify-center items-center w-max gap-5 mx-auto shadow-xl rounded-xl p-3 space-y-2 border border-gray-100">
+            {["IELTS", "PTE", "OET", "LAT"].map((course) => (
+              <div key={course} className="px-3 py-1.5 bg-blue-50 rounded-lg text-center">
+                <span className="text-blue-900 text-sm font-semibold">{course}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Stats Bar */}
@@ -148,7 +175,7 @@ export default function HeroSection() {
         </div>
 
         {/* Trust Indicators */}
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <p className="text-gray-400 text-sm mb-4">Trusted by leading companies</p>
           <div className="flex flex-wrap justify-center gap-8 opacity-60">
             {["Company 1", "Company 2", "Company 3", "Company 4"].map((company) => (
@@ -157,7 +184,7 @@ export default function HeroSection() {
               </span>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
