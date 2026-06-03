@@ -3,7 +3,7 @@ import { GraduationCap, Globe, Briefcase, Users, ChevronRight, Star } from "luci
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen bg-white">
+    <section className="relative min-h-screen bg-white pt-10 lg:pt-0">
 
       {/* Modern Background Pattern */}
       <div className="absolute inset-0 bg-linear-to-br from-blue-50/50 via-white to-white" />
@@ -17,18 +17,18 @@ export default function HeroSection() {
           <div>
             {/* Trust Badge */}
             <div className="flex justify-center xl:justify-start">
-              <div className="inline-flex items-center gap-3 bg-white shadow-lg rounded-full px-5 py-2 mb-8 border border-gray-100">
+              <div className="inline-flex items-center gap-3 bg-white shadow-lg rounded-full px-4 lg:px-5 py-1.5 lg:py-2 mb-8 border border-gray-100">
                 <div className="flex -space-x-2">
-                  {[1, 2, 3].map((i) => (
+                  {[{ prf: "/prf1.jpg" }, { prf: "/prf2.webp" }, { prf: "/prf3.webp" }].map((i) => (
                     <div
                       key={i}
-                      className="w-8 h-8 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center"
+                      className="w-8 h-8 rounded-full bg-blue-100 border-2 border-white overflow-hidden flex items-center justify-center"
                     >
-                      <span className="text-blue-800 text-xs font-bold">S</span>
+                      <Image width={100} height={100} alt="KLC Academy in Gujranwala" priority src={i.prf} className="w-full h-full" />
                     </div>
                   ))}
                 </div>
-                <span className="text-gray-700 text-sm font-medium">
+                <span className="text-gray-700 text-xs lg:text-sm font-medium">
                   Trusted by 500+ Students
                 </span>
               </div>
@@ -54,29 +54,37 @@ export default function HeroSection() {
                   // preload kr k rakhta ha 
                   // placeholder="blur"
                   // blurDataURL="..."
-                  className="w-50 h-auto object-cover rounded-xl"
+                  className="w-40 -translate-y-2 md:w-50 h-auto object-cover rounded-xl"
                 />
                 {/* Overlay Gradient */}
               </figure>
             </div>
 
-            <p className="text-gray-600 text-lg mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-2 max-w-xl mx-auto lg:mx-0 leading-relaxed">
               Join KLC Academy and transform your potential into expertise.
               World-class training in language proficiency and digital skills.
             </p>
 
+            <div className="lg:hidden flex justify-center items-center w-max gap-5 mx-auto rounded-xl p-3 space-y-2">
+              {["IELTS", "PTE", "OET", "LAT"].map((course) => (
+                <div key={course} className="px-3 py-1.5 bg-blue-50 rounded-lg text-center">
+                  <span className="text-blue-900 text-sm font-semibold">{course}</span>
+                </div>
+              ))}
+            </div>
+
             {/* CTA Section */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+            <div className="flex flex-row mt-5 gap-4 justify-center lg:justify-start mb-12">
               <a
                 href="#courses"
-                className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-2 sm:py-4 bg-blue-900 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Start Learning
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-8 py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-xl hover:border-blue-900 hover:text-blue-900 transition-all"
+                className="inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg sm:rounded-xl hover:border-blue-900 hover:text-blue-900 transition-all"
               >
                 Watch Demo
               </a>
@@ -117,7 +125,7 @@ export default function HeroSection() {
             </div>
 
             {/* Floating Stats Cards */}
-            <div className="absolute -top-6 -left-6 bg-white rounded-xl shadow-xl p-4 border-l-4 border-blue-900 backdrop-blur-sm">
+            <div className="absolute -top-7 -left-8 bg-white rounded-xl shadow-xl p-4 border-l-4 border-blue-900 backdrop-blur-sm">
               <div className="flex items-center gap-3">
                 <div className="bg-green-100 p-2 rounded-lg">
                   <Star className="w-5 h-5 text-green-600 fill-green-600" />
@@ -129,7 +137,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-4">
+            <div className="absolute -bottom-6 -right-3 bg-white rounded-xl shadow-xl p-4">
               <div className="text-center">
                 <p className="text-blue-900 font-bold text-2xl">95%</p>
                 <p className="text-gray-500 text-xs">Success Rate</p>
@@ -137,7 +145,7 @@ export default function HeroSection() {
             </div>
 
             {/* Course Chips */}
-            <div className="absolute top-1/2 -right-8 transform -translate-y-1/2 hidden lg:block">
+            <div className="absolute top-1/2 -right-3 transform -translate-y-1/2 hidden lg:block">
               <div className="bg-white shadow-xl rounded-xl p-3 space-y-2 border border-gray-100">
                 {["IELTS", "PTE", "OET", "LAT"].map((course) => (
                   <div key={course} className="px-3 py-1.5 bg-blue-50 rounded-lg text-center">
@@ -147,17 +155,11 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-          <div className="bg-white flex justify-center items-center w-max gap-5 mx-auto shadow-xl rounded-xl p-3 space-y-2 border border-gray-100">
-            {["IELTS", "PTE", "OET", "LAT"].map((course) => (
-              <div key={course} className="px-3 py-1.5 bg-blue-50 rounded-lg text-center">
-                <span className="text-blue-900 text-sm font-semibold">{course}</span>
-              </div>
-            ))}
-          </div>
+
         </div>
 
         {/* Stats Bar */}
-        <div className="mt-20 pt-12 border-t border-gray-200">
+        {/* <div className="mt-20 pt-12 border-t border-gray-200">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               { value: "500+", label: "Students Trained", icon: "👨‍🎓" },
@@ -172,7 +174,7 @@ export default function HeroSection() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Trust Indicators */}
         {/* <div className="mt-12 text-center">
