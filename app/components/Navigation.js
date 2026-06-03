@@ -36,16 +36,22 @@ export default function Navigation() {
   return (
     <>
       <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${isScrolled
-          ? "bg-black shadow-2xl"
-          : "bg-transparent backdrop-blur-sm"
+        ? "bg-black shadow-2xl"
+        : "bg-transparent backdrop-blur-sm"
         }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between gap-4">
 
             {/* Logo Section - Responsive */}
-            <figure className="flex items-center gap-2 sm:gap-3 shrink-0">
-              <Image width={100} height={100} src={"/logo.webp"} alt="KLC Academy Building in Gujranwala" className="w-15" priority />
-            </figure>
+            <div className="flex justify-start gap-1 items-center">
+              <figure className="flex items-center gap-2 sm:gap-3 shrink-0">
+                <Image width={100} height={100} src={"/logo.webp"} alt="KLC Academy Building in Gujranwala" className="w-15" priority />
+              </figure>
+              <div className="">
+                <h1 className={` ${isScrolled ? "text-blue-400" : "text-blue-600"} font-bold text-md `}>KeyStone Learning Center</h1>
+                <p className={`font-mono ${isScrolled ? "text-white" : "text-black"} text-xs `}> Excellent Through Education </p>
+              </div>
+            </div>
 
             {/* Desktop Menu - Hidden on mobile, visible on md and up */}
             <div className="hidden md:flex items-center gap-4 lg:gap-6">
@@ -62,8 +68,8 @@ export default function Navigation() {
                 </a>
               ))}
               <button className={`relative px-4 py-2 lg:px-5 lg:py-2 rounded-full font-medium overflow-hidden group shadow-lg hover:shadow-xl transition-all text-sm lg:text-base ${isScrolled
-                  ? "bg-white text-black"
-                  : "bg-blue-900 text-white"
+                ? "bg-white text-black"
+                : "bg-blue-900 text-white"
                 }`}>
                 <span className="relative z-10 whitespace-nowrap">Enroll Now →</span>
                 <div className={`absolute inset-0 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ${isScrolled ? "bg-gray-200" : "bg-blue-800"
@@ -97,8 +103,8 @@ export default function Navigation() {
                   key={item}
                   href={`#${item.toLowerCase().replace(" ", "")}`}
                   className={`block font-medium py-2 px-2 rounded-lg transition ${isScrolled
-                      ? "text-gray-300 hover:text-white hover:bg-white/10"
-                      : "text-gray-700 hover:text-blue-900 hover:bg-blue-50"
+                    ? "text-gray-300 hover:text-white hover:bg-white/10"
+                    : "text-gray-700 hover:text-blue-900 hover:bg-blue-50"
                     }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
@@ -106,8 +112,8 @@ export default function Navigation() {
                 </a>
               ))}
               <button className={`w-full py-2.5 rounded-full font-medium transition ${isScrolled
-                  ? "bg-white text-black hover:bg-gray-200"
-                  : "bg-blue-900 text-white hover:bg-blue-800"
+                ? "bg-white text-black hover:bg-gray-200"
+                : "bg-blue-900 text-white hover:bg-blue-800"
                 }`}>
                 Enroll Now
               </button>
