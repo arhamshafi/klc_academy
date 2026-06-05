@@ -74,7 +74,7 @@ export default function HeroSection() {
             </div>
 
             {/* CTA Section */}
-            {/* <div className="flex flex-row mt-5 gap-4 justify-center lg:justify-start mb-12">
+            <div className="flex flex-row mt-5 gap-4 justify-center lg:justify-start mb-12">
               <a
                 href="#courses"
                 className="group inline-flex items-center justify-center gap-2 px-4 md:px-8 py-2 md:py-4 bg-blue-900 text-white font-semibold rounded-lg md:rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
@@ -88,7 +88,7 @@ export default function HeroSection() {
               >
                 Watch Demo
               </a>
-            </div> */}
+            </div>
 
             {/* Features List */}
             {/* <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">

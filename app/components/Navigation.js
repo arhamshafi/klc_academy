@@ -113,7 +113,7 @@ export default function Navigation() {
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               ref={buttonRef}
-              className="md:hidden p-2 cursor-pointer rounded-lg hover:bg-gray-100 transition shrink-0"
+              className="md:hidden p-2 cursor-pointer rounded-lg group hover:bg-gray-100/20 transition shrink-0"
               aria-label="Toggle menu"
             >
               <svg className={`w-5 h-5 sm:w-6 sm:h-6 ${isScrolled ? "text-white" : "text-gray-700"
@@ -125,6 +125,8 @@ export default function Navigation() {
                 )}
               </svg>
             </button>
+
+
           </div>
 
           {/* Mobile Menu - Slide down animation */}
@@ -139,10 +141,12 @@ export default function Navigation() {
                     setActiveItem(item);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`block font-medium py-1.5 px-2 rounded-lg transition text-sm ${activeItem === item
-                    ? "bg-blue-500/10 text-gray-600"
+                  className={`block font-medium py-1.5 px-2 rounded-md sm:rounded-lg transition text-sm ${activeItem === item
+                    ? isScrolled
+                      ? "bg-white/20 text-white"
+                      : "bg-blue-500/10 text-gray-600"
                     : isScrolled
-                      ? "text-gray-300 hover:text-white hover:bg-white/10"
+                      ? "text-gray-300 hover:text-white hover:bg-white/20"
                       : "text-gray-700 hover:text-blue-900 hover:bg-blue-50"
                     }`}
                 >
