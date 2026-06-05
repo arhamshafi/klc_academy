@@ -8,6 +8,7 @@ export default function Navigation() {
   const [mounted, setMounted] = useState(false);
   const [activeItem, setActiveItem] = useState("About KLC");
   const menuRef = useRef(null)
+  const buttonRef = useRef(null);
 
 
   useEffect(() => {
@@ -33,12 +34,17 @@ export default function Navigation() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        !buttonRef.current?.contains(event.target)
+      ) {
         setIsMobileMenuOpen(false);
       }
     };
 
     document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -61,9 +67,9 @@ export default function Navigation() {
             {/* Logo Section - Responsive */}
             <div className="flex justify-start gap-1 items-center">
               <figure className="flex items-center gap-2 sm:gap-3 shrink-0">
-                <Image width={100} height={100} src={"/logo.webp"} alt="KLC Academy Building in Gujranwala" className="w-15" priority />
+                <Image width={100} height={100} src={"/logo.webp"} alt="KLC Academy Building in Gujranwala" className="w-12" priority />
               </figure>
-              <div className="hide">
+              <div className="hideAt375">
                 <h1 className={` ${isScrolled ? "text-blue-400" : "text-blue-600"} font-bold text-md `}>KeyStone Learning Center</h1>
                 <p className={`font-mono ${isScrolled ? "text-white" : "text-black"} text-xs `}> Excellent Through Education </p>
               </div>
@@ -106,7 +112,8 @@ export default function Navigation() {
             {/* Mobile Menu Button - Visible only on mobile */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition shrink-0"
+              ref={buttonRef}
+              className="md:hidden p-2 cursor-pointer rounded-lg hover:bg-gray-100 transition shrink-0"
               aria-label="Toggle menu"
             >
               <svg className={`w-5 h-5 sm:w-6 sm:h-6 ${isScrolled ? "text-white" : "text-gray-700"
@@ -142,7 +149,7 @@ export default function Navigation() {
                   {item}
                 </a>
               ))}
-              <button className={`w-full py-1.5 rounded-full font-medium text-sm transition ${isScrolled
+              <button className={`w-full py-1.5 cursor-pointer rounded-full font-medium text-sm transition ${isScrolled
                 ? "bg-white text-black hover:bg-gray-200"
                 : "bg-blue-900 text-white hover:bg-blue-800"
                 }`}>

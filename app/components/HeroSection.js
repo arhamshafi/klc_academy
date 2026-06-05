@@ -6,9 +6,9 @@ export default function HeroSection() {
     <section className="relative min-h-screen bg-white pt-10 lg:pt-0">
 
       {/* Modern Background Pattern */}
-      <div className="absolute inset-0 bg-linear-to-br from-blue-50/50 via-white to-white" />
-      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30" />
+      <div className="absolute inset-0 bg-linear-to-br from-blue-50/50 hideAt375 via-white to-white" />
+      <div className="absolute top-0 right-0 w-40 sm:w-96 h-40 hideAt375 sm:h-96 bg-blue-100 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 left-0 sm:w-96 w-40 h-40 sm:h-96 hideAt375 bg-blue-100 rounded-full blur-3xl opacity-30" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24 lg:pt-32 pb-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-15 items-center">
@@ -22,7 +22,7 @@ export default function HeroSection() {
                   {[{ prf: "/prf1.jpg" }, { prf: "/prf2.webp" }, { prf: "/prf3.webp" }].map((i) => (
                     <div
                       key={i}
-                      className="w-8 h-8 rounded-full bg-blue-100 border-2 border-white overflow-hidden flex items-center justify-center"
+                      className=" w-5 h-5 sm:w-8 sm:h-8 rounded-full bg-blue-100 border-2 border-white overflow-hidden flex items-center justify-center"
                     >
                       <Image width={100} height={100} alt="KLC Academy in Gujranwala" priority src={i.prf} className="w-full h-full" />
                     </div>
@@ -35,9 +35,9 @@ export default function HeroSection() {
             </div>
 
             {/* Main Heading */}
-            <div className="w-full flex justify-evenly items-center">
+            <div className="w-full flex flexColAt500 justify-evenly items-center">
 
-              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
+              <h1 className="text-3xl headingAt375 sm:text-4xl textCetrAt500 md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
                 <span className="text-gray-900">Learn </span>
                 <span className="text-blue-900">Skills.</span>
                 <br />
@@ -60,38 +60,38 @@ export default function HeroSection() {
               </figure>
             </div>
 
-            <p className="text-gray-600 text-lg mb-2 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-gray-600 text-lg mb-2 max-w-xl text-center lg:text-left mx-auto lg:mx-0 leading-relaxed">
               Join KLC Academy and transform your potential into expertise.
               World-class training in language proficiency and digital skills.
             </p>
 
-            <div className="lg:hidden flex justify-center items-center w-max gap-5 mx-auto rounded-xl p-3 space-y-2">
-              {["IELTS", "PTE", "OET", "LAT"].map((course) => (
-                <div key={course} className="px-3 py-1.5 bg-blue-50 rounded-lg text-center">
-                  <span className="text-blue-900 text-sm font-semibold">{course}</span>
+            <div className="lg:hidden flex justify-center items-center w-max gap-3 sm:gap-5 mx-auto rounded-xl p-3 space-y-2">
+              {["IELTS", "PTE", "OET", "LAT"].map((course , i) => (
+                <div key={i} className="px-3 py-1.5 bg-blue-50 rounded-lg text-center">
+                  <span className="text-blue-900 text-xs sm:text-sm font-semibold">{course}</span>
                 </div>
               ))}
             </div>
 
             {/* CTA Section */}
-            <div className="flex flex-row mt-5 gap-4 justify-center lg:justify-start mb-12">
+            {/* <div className="flex flex-row mt-5 gap-4 justify-center lg:justify-start mb-12">
               <a
                 href="#courses"
-                className="group inline-flex items-center justify-center gap-2 px-4 sm:px-8 py-2 sm:py-4 bg-blue-900 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                className="group inline-flex items-center justify-center gap-2 px-4 md:px-8 py-2 md:py-4 bg-blue-900 text-white font-semibold rounded-lg md:rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
               >
                 Start Learning
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-4 sm:px-8 py-2 sm:py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg sm:rounded-xl hover:border-blue-900 hover:text-blue-900 transition-all"
+                className="inline-flex items-center justify-center px-4 md:px-8 py-2 md:py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg md:rounded-xl hover:border-blue-900 hover:text-blue-900 transition-all"
               >
                 Watch Demo
               </a>
-            </div>
+            </div> */}
 
             {/* Features List */}
-            <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
+            {/* <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
               {[
                 { icon: GraduationCap, text: "Expert Faculty", color: "text-blue-900" },
                 { icon: Globe, text: "Global Recognition", color: "text-blue-800" },
@@ -105,7 +105,7 @@ export default function HeroSection() {
                   <span className="text-gray-700 text-sm font-medium">{item.text}</span>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Right Side - Modern Image Layout */}

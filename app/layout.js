@@ -6,7 +6,6 @@ export const metadata = {
   description: "First complete tech ecosystem in Gujranwala offering Frontend, Backend, MERN Stack, Full Stack Development with AI workflows and prompt engineering. Enroll now!",
   keywords: "tech courses gujranwala, frontend development gujranwala, backend development gujranwala, mern stack gujranwala, full stack development gujranwala, ai workflows gujranwala, programming languages gujranwala",
   authors: [{ name: "KLC" }],
-  viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
   openGraph: {
     title: "KLC - Tech Courses in Gujranwala",
@@ -19,6 +18,11 @@ export const metadata = {
   alternates: {
     canonical: "https://klc-gujranwala.com"
   }
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({ children }) {

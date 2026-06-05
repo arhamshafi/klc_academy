@@ -1,9 +1,36 @@
 @import "tailwindcss";
 
+* {
+    box-sizing: border-box;
+}
+
+
+@media screen and (max-width:500px) {
+
+    .hideAt500 {
+        display: none;
+    }
+
+    .flexColAt500 {
+        flex-direction: column-reverse;
+    }
+
+    .textCetrAt500 {
+        text-align: center;
+    }
+}
 
 @media screen and (max-width:375px) {
 
-    .hide {
+    .hideAt375 {
         display: none;
+    }
+
+    .blockAt375 {
+        display: block;
+    }
+
+    .headingAt375 {
+        font-size: 30px;
     }
 }
