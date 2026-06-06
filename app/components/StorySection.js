@@ -84,30 +84,46 @@ export default function StorySection() {
 
       <div className="relative z-10 max-w-7xl mx-auto sm:px-4 md:px-6 lg:px-8">
 
+
+
         {/* Header - Same style as Hero */}
-        <div className="text-center mb-15 md:mb-25 ">
+        <div className="relative w-full ">
+          {/* Map Image */}
+          <figure className="absolute inset-0 opacity-30 ">
+            <Image
+              src="/map.png"
+              alt="KLC Gujranwala"
+              fill
+              className="object-contain translate-y-15 select-none pointer-events-none"
+              priority={false}
+              loading="lazy"
+            />
+          </figure>
+          <div className="text-center mb-15 z-10 md:mb-25 relative ">
 
-          {/* Main Heading - Same style as Hero */}
-          <h1 className="heading2At375 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-4">
-            <span className="text-gray-900">The </span>
-            <span className="text-blue-900">KLC Academy</span>
-            <br />
-            <span className="bg-linear-to-r from-blue-900 to-black bg-clip-text text-transparent">
-              Story
-            </span>
-          </h1>
 
-          <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-10"></div>
 
-          <p className="text-gray-600 max-w-3xl mx-auto text-md sm:text-lg leading-relaxed">
-            Founded in <strong className="text-blue-800">2026</strong>, KLC Academy started as a small dream in a small room.
-            Today, we are Gujranwala's most trusted <strong>skill development & caching center</strong> —
-            offering tech, freelancing, and professional courses.
-          </p>
+            {/* Main Heading - Same style as Hero */}
+            <h1 className="heading2At375 text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold leading-tight mb-4">
+              <span className="text-gray-900">The </span>
+              <span className="text-blue-900">KLC </span>
+              <span className="bg-linear-to-r from-blue-900 to-black bg-clip-text text-transparent">
+                Story
+              </span>
+            </h1>
+
+            <div className="h-1 w-20 bg-blue-600 mx-auto rounded-full mb-10"></div>
+
+            <p className="text-gray-600 max-w-3xl mx-auto text-md sm:text-lg leading-relaxed">
+              Founded in <strong className="text-blue-800">2026</strong>, KLC started as a small dream in a small room.
+              Today, we are Gujranwala's most trusted <strong>skill development & caching center</strong> —
+              offering tech, freelancing, and professional courses.
+            </p>
+          </div>
         </div>
 
         {/* Timeline Cards - Same styling as Hero features */}
-        <div className="relative mb-24">
+        <div className="relative mb-10 sm:mb-15 lg:mb-20">
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-blue-200 transform -translate-y-1/2"></div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 relative ">
@@ -161,34 +177,34 @@ export default function StorySection() {
         </div>
 
         {/* What We Offer Section - Same style as Hero stats bar */}
-        {/* <div className="mb-20  bg-linear-to-br from-blue-900 to-black/90 px-5 rounded-2xl py-5 ">
+        <div className="mb-20  bg-linear-to-br from-blue-900 to-black/90 pxAt375 px-5 rounded-2xl py-5 ">
           <div className="text-center mb-10">
             <h3 className="text-2xl md:text-3xl text-white/80 mb-3">
-              What <span className="text-white font-bold">KLC Academy</span> Offers
+              What <span className="text-white font-bold">KLC</span> Offers
             </h3>
             <div className="h-1 w-16 bg-white mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
             {offerings.map((offer, idx) => (
               <div
                 key={idx}
-                className="flex items-center gap-3 bg-white rounded-xl p-4 shadow-md border border-gray-100 hover:shadow-lg transition-all group"
+                className="flex items-center gap-3 bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 hover:shadow-lg transition-all group"
               >
-                <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition">
+                <div className="p-2 bg-blue-50 rounded-md group-hover:bg-blue-100 transition">
                   <offer.icon className={`w-5 h-5 ${offer.color}`} />
                 </div>
-                <span className="text-gray-700 font-medium text-md ">
+                <span className="text-gray-700 font-medium text-sm sm:text-md ">
                   {offer.text}
                 </span>
               </div>
             ))}
           </div>
 
-          <p className="text-center text-white text-sm mt-6 italic">
+          <p className="text-center text-white text-xs sm:text-sm mt-6 italic">
             * Rizq from Allah. We provide skills, not job guarantees.
           </p>
-        </div> */}
+        </div>
 
 
         {/* Why Choose Us - Same as Hero features grid */}
