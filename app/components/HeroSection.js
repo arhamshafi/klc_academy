@@ -16,7 +16,7 @@ export default function HeroSection() {
           {/* Left Side - Content */}
           <div>
             {/* Trust Badge */}
-            <div className="flex justify-center xl:justify-start">
+            <div className="flex justify-center xl:justify-start ">
               <div className="inline-flex items-center gap-3 bg-white shadow-lg rounded-full px-4 lg:px-5 py-1.5 lg:py-2 mb-8 border border-gray-100">
                 <div className="flex -space-x-2">
                   {[{ prf: "/prf1.jpg" }, { prf: "/prf2.webp" }, { prf: "/prf3.webp" }].map((i) => (
@@ -35,7 +35,7 @@ export default function HeroSection() {
             </div>
 
             {/* Main Heading */}
-            <div className="w-full flex flexColAt500 justify-evenly items-center">
+            <div className="w-full flex flexColAt500 justify-evenly lg:justify-start items-center">
 
               <h1 className="text-3xl headingAt375 sm:text-4xl textCetrAt500 md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-6">
                 <span className="text-gray-900">Learn </span>
@@ -44,7 +44,7 @@ export default function HeroSection() {
                 <span className="text-gray-900">Build </span>
                 <span className="text-blue-900">Careers.</span>
                 <br />
-                <span className="bg-linear-to-r from-blue-900 to-blue-700 bg-clip-text text-transparent">
+                <span className="bg-linear-to-r lg:text-5xl xl:text-6xl from-blue-900 to-blue-700 bg-clip-text text-transparent">
                   Change Future.
                 </span>
               </h1>
@@ -60,15 +60,18 @@ export default function HeroSection() {
               </figure>
             </div>
 
-            <p className="text-gray-600 text-lg mb-2 max-w-xl text-center lg:text-left mx-auto lg:mx-0 leading-relaxed">
+            <p className="text-gray-600 text-md sm:text-lg mb-2 max-w-xl text-center lg:text-left mx-auto lg:mx-0 leading-relaxed">
               Join KLC Academy and transform your potential into expertise.
               World-class training in language proficiency and digital skills.
             </p>
 
-            <div className="lg:hidden flex justify-center items-center w-max gap-3 sm:gap-5 mx-auto rounded-xl p-3 space-y-2">
-              {["IELTS", "PTE", "OET", "LAT"].map((course , i) => (
-                <div key={i} className="px-3 py-1.5 bg-blue-50 rounded-lg text-center">
-                  <span className="text-blue-900 text-xs sm:text-sm font-semibold">{course}</span>
+            <div className="lg:hidden flex justify-center items-center gap-2 mx-auto rounded-xl p-3 overflow-x-auto">
+              {["IELTS", "PTE", "OET", "LAT"].map((course, i) => (
+                <div
+                  key={i}
+                  className="shrink-0 px-3 py-1.5 bg-blue-50 rounded-lg text-center text-sm text-blue-500"
+                >
+                  {course}
                 </div>
               ))}
             </div>
@@ -77,35 +80,35 @@ export default function HeroSection() {
             <div className="flex flex-row mt-5 gap-4 justify-center lg:justify-start mb-12">
               <a
                 href="#courses"
-                className="group inline-flex items-center justify-center gap-2 px-4 md:px-8 py-2 md:py-4 bg-blue-900 text-white font-semibold rounded-lg md:rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105"
+                className="group inline-flex items-center justify-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-8 py-2 md:py-4 bg-blue-900 text-white font-semibold rounded-lg md:rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105 whitespace-nowrap text-sm sm:text-base"
               >
                 Start Learning
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition" />
               </a>
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center px-4 md:px-8 py-2 md:py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg md:rounded-xl hover:border-blue-900 hover:text-blue-900 transition-all"
+                className="inline-flex items-center justify-center px-3 sm:px-4 md:px-8 py-2 md:py-4 border-2 border-gray-300 text-gray-700 font-semibold rounded-lg md:rounded-xl hover:border-blue-900 hover:text-blue-900 transition-all whitespace-nowrap text-sm sm:text-base"
               >
                 Watch Demo
               </a>
             </div>
 
             {/* Features List */}
-            {/* <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
+            <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
               {[
                 { icon: GraduationCap, text: "Expert Faculty", color: "text-blue-900" },
                 { icon: Globe, text: "Global Recognition", color: "text-blue-800" },
                 { icon: Briefcase, text: "Job Assistance", color: "text-blue-700" },
                 { icon: Users, text: "Small Batches", color: "text-blue-600" },
               ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3">
+                <div key={idx} className="flex items-center gap-3 min-w-0">
                   <div className="p-2 bg-blue-50 rounded-lg">
                     <item.icon className={`w-5 h-5 ${item.color}`} />
                   </div>
-                  <span className="text-gray-700 text-sm font-medium">{item.text}</span>
+                  <span className="text-gray-700 text-sm font-medium truncate">{item.text}</span>
                 </div>
               ))}
-            </div> */}
+            </div>
           </div>
 
           {/* Right Side - Modern Image Layout */}
@@ -159,8 +162,8 @@ export default function HeroSection() {
         </div>
 
         {/* Stats Bar */}
-        {/* <div className="mt-20 pt-12 border-t border-gray-200">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="mt-10 pt-5 border-t border-gray-200">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
             {[
               { value: "500+", label: "Students Trained", icon: "👨‍🎓" },
               { value: "25+", label: "Expert Trainers", icon: "👨‍🏫" },
@@ -168,13 +171,13 @@ export default function HeroSection() {
               { value: "100%", label: "Satisfaction", icon: "😊" },
             ].map((stat, idx) => (
               <div key={idx} className="text-center p-4 rounded-xl hover:bg-blue-50 transition group">
-                <div className="text-3xl mb-2">{stat.icon}</div>
-                <div className="text-2xl md:text-3xl font-bold text-blue-900 mb-1">{stat.value}</div>
-                <div className="text-gray-500 text-sm">{stat.label}</div>
+                <div className="text-xl md:text-2xl lg:text-3xl mb-2">{stat.icon}</div>
+                <div className="text-xl md:text-2xl lg:text-3xl font-bold text-blue-900 mb-1">{stat.value}</div>
+                <div className="text-gray-500 text-xs sm:text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
-        </div> */}
+        </div>
 
         {/* Trust Indicators */}
         {/* <div className="mt-12 text-center">

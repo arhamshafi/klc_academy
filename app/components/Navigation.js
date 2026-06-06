@@ -71,7 +71,7 @@ export default function Navigation() {
               </figure>
               <div className="hideAt375">
                 <h1 className={` ${isScrolled ? "text-blue-400" : "text-blue-600"} font-bold text-md `}>KeyStone Learning Center</h1>
-                <p className={`font-mono ${isScrolled ? "text-white" : "text-black"} text-xs `}> Excellent Through Education </p>
+                <p className={`font-mono ${isScrolled ? "text-white" : "text-black"} text-xs `}> Excellence Through Education </p>
               </div>
             </div>
 
