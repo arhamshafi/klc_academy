@@ -61,7 +61,7 @@ export default function HeroSection() {
             </div>
 
             <p className="text-gray-600 text-md sm:text-lg mb-2 max-w-xl text-center lg:text-left mx-auto lg:mx-0 leading-relaxed">
-              Join KLC Academy and transform your potential into expertise.
+              Join <strong>KLC</strong> to transform your potential into expertise.
               World-class training in language proficiency and digital skills.
             </p>
 
