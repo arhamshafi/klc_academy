@@ -10,7 +10,7 @@ export default function HeroSection() {
       <div className="absolute top-0 right-0 w-40 sm:w-96 h-40 hideAt375 sm:h-96 bg-blue-100 rounded-full blur-3xl opacity-30" />
       <div className="absolute bottom-0 left-0 sm:w-96 w-40 h-40 sm:h-96 hideAt375 bg-blue-100 rounded-full blur-3xl opacity-30" />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24 lg:pt-32 pb-20">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 pt-16 md:pt-24 lg:pt-32 pb-10 ">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-15 items-center">
 
           {/* Left Side - Content */}
@@ -166,9 +166,9 @@ export default function HeroSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
             {[
               { value: "500+", label: "Students Trained", icon: "👨‍🎓" },
-              { value: "25+", label: "Expert Trainers", icon: "👨‍🏫" },
+              { value: "5+", label: "Expert Trainers", icon: "👨‍🏫" },
               { value: "15+", label: "Active Courses", icon: "📚" },
-              { value: "100%", label: "Satisfaction", icon: "😊" },
+              { value: "99.9%", label: "Satisfaction", icon: "😊" },
             ].map((stat, idx) => (
               <div key={idx} className="text-center p-4 rounded-xl hover:bg-blue-50 transition group">
                 <div className="text-xl md:text-2xl lg:text-3xl mb-2">{stat.icon}</div>
