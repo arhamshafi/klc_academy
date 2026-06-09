@@ -116,7 +116,7 @@ export default function HeroSection() {
             {/* Main Image Card */}
             <div className="relative rounded-2xl p-3 ">
               <figure className="relative rounded-xl overflow-hidden">
-                <Image src="/witbg.png" alt="KLC Academy Building in Gujranwala" width={550} height={550} priority
+                <Image src="/witbg.webp" alt="KLC Academy Building in Gujranwala" width={550} height={550} priority
                   // preload kr k rakhta ha 
                   // placeholder="blur"
                   // blurDataURL="..."
@@ -166,8 +166,8 @@ export default function HeroSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-6">
             {[
               { value: "500+", label: "Students Trained", icon: "👨‍🎓" },
-              { value: "5+", label: "Expert Trainers", icon: "👨‍🏫" },
-              { value: "15+", label: "Active Courses", icon: "📚" },
+              { value: "15+", label: "Expert Trainers", icon: "👨‍🏫" },
+              { value: "20+", label: "Active Courses", icon: "📚" },
               { value: "99.9%", label: "Satisfaction", icon: "😊" },
             ].map((stat, idx) => (
               <div key={idx} className="text-center p-4 rounded-xl hover:bg-blue-50 transition group">

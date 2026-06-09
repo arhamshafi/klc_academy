@@ -96,6 +96,7 @@ export default function StorySection() {
               fill
               className="object-contain translate-y-15 select-none pointer-events-none"
               priority={false}
+              quality={75}
               loading="lazy"
             />
           </figure>
@@ -123,7 +124,7 @@ export default function StorySection() {
         </div>
 
         {/* Timeline Cards - Same styling as Hero features */}
-        <div className="relative mb-10 sm:mb-15 lg:mb-20">
+        <div className="relative mb-10 sm:mb-15 lg:mb-20 ">
           <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-blue-200 transform -translate-y-1/2"></div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 relative ">
@@ -139,7 +140,7 @@ export default function StorySection() {
                 {/* Card - Same as Hero feature cards */}
                 <div className="relative h-full">
                   <div className={`absolute -inset-0.5 bg-linear-to-r ${milestone.gradient} rounded-2xl blur opacity-0 group-hover:opacity-20 transition duration-500`}></div>
-                  <div className="relative bg-white rounded-2xl p-5 sm:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+                  <div className="relative bg-white rounded-2xl p-5 lg:p-8 shadow-lg border border-gray-100 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                     {/* Icon - Same as Hero */}
                     <div className="rounded-xl w-fit mb-5">
                       <span className="text-xl sm:text-2xl lg:text-3xl">
@@ -177,24 +178,24 @@ export default function StorySection() {
         </div>
 
         {/* What We Offer Section - Same style as Hero stats bar */}
-        <div className="mb-20  bg-linear-to-br from-blue-900 to-black/90 pxAt375 px-5 rounded-2xl py-5 ">
-          <div className="text-center mb-10">
+        <div className="mb-10 sm:mb-20 bg-linear-to-br from-blue-900 to-black/90 pxAt375 px-3 sm:px-5 rounded-2xl py-5 ">
+          <div className="text-center mb-8 sm:mb-10">
             <h3 className="text-2xl md:text-3xl text-white/80 mb-3">
               What <span className="text-white font-bold">KLC</span> Offers
             </h3>
-            <div className="h-1 w-16 bg-white mx-auto rounded-full"></div>
+            <div className="h-1 w-10 sm:w-16 bg-white mx-auto rounded-full"></div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3">
             {offerings.map((offer, idx) => (
               <div
                 key={idx}
                 className="flex items-center gap-3 bg-white rounded-lg p-3 sm:p-4 shadow-md border border-gray-100 hover:shadow-lg transition-all group"
               >
                 <div className="p-2 bg-blue-50 rounded-md group-hover:bg-blue-100 transition">
-                  <offer.icon className={`w-5 h-5 ${offer.color}`} />
+                  <offer.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${offer.color}`} />
                 </div>
-                <span className="text-gray-700 font-medium text-sm sm:text-md ">
+                <span className="text-gray-700 font-medium text-xs sm:text-sm lg:text-md ">
                   {offer.text}
                 </span>
               </div>
@@ -208,9 +209,9 @@ export default function StorySection() {
 
 
         {/* Why Choose Us - Same as Hero features grid */}
-        <div className="mb-16 grid md:grid-cols-2 gap-12 items-start">
-          {/* <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+        <div className="mb-10 sm:mb-16 grid lg:grid-cols-2 gap-10 items-start">
+          <div>
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
               Why <span className="text-blue-900">Gujranwala</span> Chooses KLC
             </h3>
             <div className="h-1 w-16 bg-blue-600 rounded-full mb-6"></div>
@@ -222,53 +223,53 @@ export default function StorySection() {
                 { text: "24/7 Community Guidance — Our community provides all-time guidance and support", icon: Target },
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-3 group">
-                  <div className="p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition mt-0.5">
-                    <item.icon className="w-5 h-5 text-blue-900" />
+                  <div className="p-1.5 sm:p-2 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition mt-0.5">
+                    <item.icon className="h-4 w-4 sm:w-5 sm:h-5 text-blue-900" />
                   </div>
-                  <span className="text-gray-700 leading-relaxed">
-                    <strong className="text-gray-900">{item.text.split(" — ")[0]}</strong>
+                  <span className="text-gray-700 text-sm sm:text-md xl:text-lg leading-relaxed">
+                    <strong className="text-gray-900 ">{item.text.split(" — ")[0]}</strong>
                     {item.text.split(" — ")[1] && ` — ${item.text.split(" — ")[1]}`}
                   </span>
                 </div>
               ))}
             </div>
-          </div> */}
+          </div>
 
           {/* Testimonial Card - Same style as Hero floating cards */}
-          {/* <div className="bg-white rounded-2xl p-8 shadow-xl border-l-4 border-blue-900">
+          <div className="bg-white rounded-xl sm:rounded-2xl p-5 sm:p-8 shadow-xl border-l-4 border-blue-900">
             <div className="flex items-center gap-3 mb-4">
               <div className="bg-green-100 p-2 rounded-lg">
                 <Star className="w-6 h-6 text-green-600 fill-green-600" />
               </div>
               <div>
-                <p className="text-gray-900 font-bold text-xl">4.9</p>
-                <p className="text-gray-500 text-sm">Rating (150+ reviews)</p>
+                <p className="text-gray-900 font-bold text-lg sm:text-xl">4.9</p>
+                <p className="text-gray-500 text-xs sm:text-sm">Rating (150+ reviews)</p>
               </div>
             </div>
-            <p className="text-gray-700 italic leading-relaxed mb-4">
+            <p className="text-gray-700 italic text-sm sm:text-md leading-relaxed mb-4">
               "Best decision I ever made. The mentors at KLC Academy are exceptional!
               They don't just teach — they guide you until you succeed."
             </p>
-            <div className="border-t border-gray-100 pt-4">
-              <p className="text-blue-900 font-semibold">— Muhammad Ali</p>
-              <p className="text-gray-500 text-sm">Successful Freelancer</p>
+            <div className="border-t border-gray-100 pt-3 sm:pt-4">
+              <p className="text-blue-900 text-sm sm:text-md font-semibold">— Muhammad Ali</p>
+              <p className="text-gray-500 text-xs sm:text-sm">Successful Freelancer</p>
             </div>
-          </div> */}
+          </div>
         </div>
 
         {/* Call to Action - Same as Hero CTA */}
-        {/* <div className="text-center">
+        <div className="text-center">
           <a
             href="#contact"
-            className="group inline-flex items-center justify-center gap-2 px-8 py-4 bg-blue-900 text-white font-semibold rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105 text-lg"
+            className="group inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-8 sm:py-4 bg-blue-900 text-white font-semibold rounded-lg sm:rounded-xl hover:bg-blue-800 transition-all shadow-lg hover:shadow-xl hover:scale-105 text-sm sm:text-lg"
           >
             Start Your Journey
-            <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition" />
+            <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition" />
           </a>
-          <p className="text-gray-500 text-sm mt-4">
+          <p className="text-gray-500 text-sm mt-3 sm:mt-4">
             Limited seats available • 2026–2027 batch
           </p>
-        </div> */}
+        </div>
       </div>
     </section>
   );
